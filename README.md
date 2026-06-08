@@ -1,5 +1,7 @@
 # Continuum Dislocation Dynamics: ADD Framework for Grain Boundary Interactions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20601645.svg)](https://doi.org/10.5281/zenodo.20601645)
+
 This repository contains the MATLAB source code for simulating the effect of misorientation angles and grain size on the yield stress of crystalline materials. It utilizes a mesoscopic Continuum Dislocation Dynamics (CDD) model known as **"all-dislocation" density (ADD) dynamics**. 
 
 This code forms the foundational data representation for Chapter 4 of my thesis and the associated publication in the *International Journal of Plasticity*.
@@ -33,7 +35,7 @@ To run the main scripts, the following custom MATLAB functions must be present i
 * `annihilation.m`, `border_maker.m`, `cthetacoarse.m`, `difff7.m`, `discoarse1.m`, `distance2curve.m`, `flux_flow_interaction2.m`, `grain_point_interaction.m`, `interaction_coeff_o.m`, `interaction_lr_mirror_o.m`, `local_max.m`, `strain_finder.m`, `tau_calculator1.m` (and/or `Tau_calculator1.m`), `theta_diff2.m`, `thetadiff.m`, `vel_modifier.m`.
 
 **Data Files:**
-* `initial_dislocation_8000b.mat`: Contains the initial dislocation configuration (`lines` cell array).
+* `all_dis_8000b.mat`: Contains the initial dislocation configuration (`lines` cell array) required as the initial dislocation microstructure. *(Note: Hosted on Zenodo due to GitHub file size limits).*
 
 ## System Requirements
 
@@ -45,11 +47,12 @@ To run the main scripts, the following custom MATLAB functions must be present i
 ## Usage
 
 1. Clone the repository to your local machine.
-2. Open MATLAB and navigate to the repository folder.
-3. Ensure all required `.m` files and the `.mat` data file are in the current path.
-4. Open `main_code.m`.
-5. Adjust the `parpool` size according to your machine's hardware capabilities (default is set to 80 workers).
-6. Run `main_code.m`.
+2. **Crucial Step:** The required initial microstructure data file (`all_dis_8000b.mat`) is too large for GitHub. Please download it from the Zenodo archive at [https://doi.org/10.5281/zenodo.20601645](https://doi.org/10.5281/zenodo.20601645) and place it in the main repository folder.
+3. Open MATLAB and navigate to the repository folder.
+4. Ensure all required `.m` files and the `all_dis_8000b.mat` data file are in the current path.
+5. Open `main_code.m`.
+6. Adjust the `parpool` size according to your machine's hardware capabilities (default is set to 80 workers).
+7. Run `main_code.m`.
 
 *Note: The simulation is computationally intensive. Depending on your hardware and the number of parallel workers, it may take significant time to complete.*
 
